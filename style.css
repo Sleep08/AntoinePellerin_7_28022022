@@ -58,6 +58,7 @@
 
 .btnRechercheAvance {
     width: auto;
+    height: 25px;
     padding: 25px;
     font-size: 1.2em;
     margin-right: 25px;
@@ -67,16 +68,23 @@
     cursor: pointer;
 }
 
+.entetebtn {
+    display: flex;
+}
+
 #ingredient {
     background-color: #007BFF;
+    position: relative;
 }
 
 #appareils {
     background-color: #00CDA9;
+    position: relative;
 }
 
 #ustensils {
     background-color: #FF5A47;
+    position: relative;
 }
 
 .fa-chevron-down {
@@ -84,6 +92,23 @@
     font-weight: bold;
 }
 
+.fa-chevron-up {
+    position: relative;
+    padding-left: 25px;
+    font-weight: bold;
+}
+
+.sousMenuDropdownIngredients {
+    background-color: #007BFF;
+}
+
+.sousMenuDropdownAppareils {
+    background-color: #00CDA9;
+}
+
+.sousMenuDropdownUstensils {
+    background-color: #FF5A47;
+}
 /* Contenant des fiches recettes */
 
 #Recipes {
@@ -126,9 +151,25 @@
 
 /* sous-menu des dropdowns filters */
 
-.searchBarAvancee {
+.searchBarAvanceeIngredients {
     width: 80%;
     background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.searchBarAvanceeAppareils {
+    width: 80%;
+    background-color: #00CDA9;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.searchBarAvanceeUstensils {
+    width: 80%;
+    background-color: #FF5A47;
     border: none;
     color: white;
     font-size: 1.1em;
