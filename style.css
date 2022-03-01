@@ -1,0 +1,150 @@
+/* Feuilles de style site : Les petits plats */
+
+/* Header */
+
+.containImg {
+    height: 200px;
+    text-align: center;
+}
+
+.containImg img {
+    width: 350px;
+    height: 125px;
+    padding-top: 50px;
+}
+
+/* Barre de recherche */
+
+.searchBar {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.searchMain {
+    margin: auto;
+    margin-right: 0px;
+    width: 88%;
+    height: 45px;
+    background-color: #e7e7e7;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 1.2em;
+    padding-left: 20px;
+}
+
+.iconeSearch {
+    margin: auto;
+    margin-left: 0px;
+    width: 2%;
+    height: 45px;
+    background-color: #e7e7e7;
+    border-radius: 0px 5px 5px 0px;
+    text-align: center;
+}
+
+.fa-magnifying-glass {
+    margin-top: 10px;
+    color: gray;
+    font-size: 1.2em;
+}
+
+/* -> Boutons de recherche avancée */
+
+#containRechercheAvance {
+    display: flex;
+    margin-left: 5%;
+    margin-top: 40px;
+}
+
+.btnRechercheAvance {
+    width: auto;
+    padding: 25px;
+    font-size: 1.2em;
+    margin-right: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ingredient {
+    background-color: #007BFF;
+}
+
+#appareils {
+    background-color: #00CDA9;
+}
+
+#ustensils {
+    background-color: #FF5A47;
+}
+
+.fa-chevron-down {
+    padding-left: 25px;
+    font-weight: bold;
+}
+
+/* Contenant des fiches recettes */
+
+#Recipes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-top: 75px;
+}
+
+#Recipes article {
+    margin-right: 30px;
+}
+
+/* Style des fiches recette */
+
+.recipefiche {
+    width: 30%;
+    border: 1px solid #C9BDBD;
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+
+.zoneimage {
+    background-color: #C9BDBD;
+    height: 200px;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.enteteRecipe {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.timerecipe {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+/* sous-menu des dropdowns filters */
+
+.searchBarAvancee {
+    width: 80%;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.sousMenuDropdownIngredients, .sousMenuDropdownAppareils, .sousMenuDropdownUstensils {
+    z-index: 5;
+    position: relative;
+    width: 500px;
+    height: 400px;
+    flex-wrap: wrap;
+} 
+
+.itemDropdown {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
