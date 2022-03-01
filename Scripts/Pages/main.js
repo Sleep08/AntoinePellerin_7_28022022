@@ -7,6 +7,9 @@ const ustensilsDropDown = document.getElementById("ustensils");
 const chevronDownIngredients = document.getElementById("chevronIngredients");
 const chevronDownAppareils = document.getElementById("chevronAppareils");
 const chevronDownUstensils = document.getElementById("chevronUstensils");
+const ingredientsTitle = document.getElementById("ingredientsTitle");
+const appareilsTitle = document.getElementById("appareilsTitle");
+const ustensilsTitle = document.getElementById("ustensilsTitle");
 
 // Affichage de l'ensemble des recettes par défaut :
 
@@ -35,76 +38,100 @@ const allRechercheAvanceeItems = (recipes) => {
 // Affichage des ingrédients dans les dropdowns :
 
 const listOfItemsDropDown = (recipes) => {
-    const { ingredients, ustensils, appliance} = allRechercheAvanceeItems(recipes);
+    const { ingredients, ustensils, appliance } = allRechercheAvanceeItems(recipes);
 
     chevronDownIngredients.addEventListener("click", function(){
-        ingredientsDropDown.textContent = "";
+        ingredientsTitle.textContent = "";
+        chevronDownIngredients.style.display = "none";
         let ingredientsSearch = document.createElement("input");
         ingredientsSearch.setAttribute("placeholder", "Rechercher un ingrédient")
-        ingredientsSearch.setAttribute("class", "searchBarAvancee")
+        ingredientsSearch.setAttribute("class", "searchBarAvanceeIngredients")
         ingredientsDropDown.appendChild(ingredientsSearch);
-        chevronDownIngredients.style.display = "none";
-        let chevronUp = document.createElement("i");
-        chevronUp.setAttribute("class", "fa-solid fa-chevron-up");
-        chevronUp.setAttribute("id", "chevronUpIngredients");
-        ingredientsDropDown.appendChild(chevronUp);
+        let chevronUpIngredients = document.createElement("i");
+        chevronUpIngredients.setAttribute("class", "fa-solid fa-chevron-up");
+        chevronUpIngredients.setAttribute("id", "chevronUpIngredients");
+        ingredientsDropDown.appendChild(chevronUpIngredients);
         let sousmenuIngredients = document.createElement("div");
         sousmenuIngredients.setAttribute("class", "sousMenuDropdownIngredients")
         ingredientsDropDown.appendChild(sousmenuIngredients);
+        let ingredientList = document.createElement("ul");
+        sousmenuIngredients.appendChild(ingredientList);
         ingredients.forEach((ingredient) => {
-            let ingredientList = document.createElement("ul");
             let ingredientItem = document.createElement("li");
             ingredientItem.setAttribute("class", "itemDropdown");
             ingredientItem.textContent = ingredient;
-            sousmenuIngredients.appendChild(ingredientList);
             ingredientList.appendChild(ingredientItem);
         });
-        console.log(chevronUp);
-        chevronUp.addEventListener("click", function() {
-            console.log(sousmenuIngredients);
+        chevronUpIngredients.addEventListener("click", function() {
             ingredientsDropDown.removeChild(sousmenuIngredients);
-            ingredientsDropDown.textContent = "Ingrédients";
-            chevronUp.style.display = "none";
-            console.log(chevronDownIngredients)
-            chevronDownIngredients.style.display = "block";
+            ingredientsDropDown.removeChild(ingredientsSearch);
+            ingredientsTitle.textContent = "Ingrédients";
+            chevronDownIngredients.style.display = "flex";
+            chevronUpIngredients.style.display = "none";
         });
     });
     
-    appareilsDropDown.addEventListener("click", function(){
-        appareilsDropDown.textContent = "";
+    chevronDownAppareils.addEventListener("click", function(){
+        appareilsTitle.textContent = "";
+        chevronDownAppareils.style.display = "none";
         let appareilsSearch = document.createElement("input");
         appareilsSearch.setAttribute("placeholder", "Rechercher un appareil")
-        appareilsSearch.setAttribute("class", "searchBarAvancee")
+        appareilsSearch.setAttribute("class", "searchBarAvanceeAppareils")
         appareilsDropDown.appendChild(appareilsSearch);
-        const sousmenuAppareils = document.createElement("div");
+        let chevronUpAppareils = document.createElement("i");
+        chevronUpAppareils.setAttribute("class", "fa-solid fa-chevron-up");
+        chevronUpAppareils.setAttribute("id", "chevronUpAppareils");
+        appareilsDropDown.appendChild(chevronUpAppareils);
+        let sousmenuAppareils = document.createElement("div");
         sousmenuAppareils.setAttribute("class", "sousMenuDropdownAppareils")
         appareilsDropDown.appendChild(sousmenuAppareils);
+        let applianceList = document.createElement("ul");
+        sousmenuAppareils.appendChild(applianceList);
         appliance.forEach((appliance) => {
-            let applianceList = document.createElement("ul");
             let applianceItem = document.createElement("li");
             applianceItem.setAttribute("class", "itemDropdown");
             applianceItem.textContent = appliance;
-            sousmenuAppareils.appendChild(applianceList);
             applianceList.appendChild(applianceItem);
+        });
+        chevronUpAppareils.addEventListener("click", function() {
+            console.log("coucou")
+            console.log(sousmenuAppareils)
+            appareilsDropDown.removeChild(sousmenuAppareils);
+            appareilsDropDown.removeChild(appareilsSearch);
+            appareilsTitle.textContent = "Appareils";
+            chevronDownAppareils.style.display = "flex";
+            chevronUpAppareils.style.display = "none";
         });
     });
 
-    ustensilsDropDown.addEventListener("click", function(){
-        ustensilsDropDown.textContent = "";
+    chevronDownUstensils.addEventListener("click", function(){
+        ustensilsTitle.textContent = "";
+        chevronDownUstensils.style.display = "none";
         let ustensilsSearch = document.createElement("input");
         ustensilsSearch.setAttribute("placeholder", "Rechercher un ustensil")
-        ustensilsSearch.setAttribute("class", "searchBarAvancee")
+        ustensilsSearch.setAttribute("class", "searchBarAvanceeUstensils")
         ustensilsDropDown.appendChild(ustensilsSearch);
-        const sousmenuUstensils = document.createElement("div");
+        let chevronUpUstensils = document.createElement("i");
+        chevronUpUstensils.setAttribute("class", "fa-solid fa-chevron-up");
+        chevronUpUstensils.setAttribute("id", "chevronUpAppareils");
+        ustensilsDropDown.appendChild(chevronUpUstensils);
+        let sousmenuUstensils = document.createElement("div");
         sousmenuUstensils.setAttribute("class", "sousMenuDropdownUstensils")
         ustensilsDropDown.appendChild(sousmenuUstensils);
+        let ustensilList = document.createElement("ul");
+        sousmenuUstensils.appendChild(ustensilList);
         ustensils.forEach((ustensil) => {
-            let ustensilList = document.createElement("ul");
             let ustensilItem = document.createElement("li");
             ustensilItem.setAttribute("class", "itemDropdown");
             ustensilItem.textContent = ustensil;
-            sousmenuUstensils.appendChild(ustensilList);
             ustensilList.appendChild(ustensilItem);
+        });
+        chevronUpUstensils.addEventListener("click", function() {
+            ustensilsTitle.textContent = "Ustensiles";
+            ustensilsDropDown.removeChild(sousmenuUstensils);
+            ustensilsDropDown.removeChild(ustensilsSearch);
+            chevronDownUstensils.style.display = "flex";
+            chevronUpUstensils.style.display = "none";
         });
     });
 }
