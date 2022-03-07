@@ -25,16 +25,17 @@ function recipeFactory(data) {
         descriptionRecipe.setAttribute("class", "description");
         descriptionRecipe.textContent = description;
         let allIngredients = document.createElement("ul");
+        allIngredients.setAttribute("class", "allIngredients");
+        let zoneDescriptive = document.createElement("div");
+        zoneDescriptive.setAttribute("class", "zoneDescriptive");
 
         // Utilisation du forEach pour déclarer le contenu d'ingrédients :
         ingredients.forEach(ingredientLi => {
             let ingredientL = document.createElement("li");
             if(ingredientLi.unit === undefined){
                 ingredientLi.unit = "";
-            } /*else if (ingredientLi.quantite === undefined){
-                ingredientLi.quantity = "";
-            } */
-            ingredientL.textContent = ingredientLi.ingredient + (ingredientLi.quantity||ingredientLi.quantite) + ingredientLi.unit
+            } 
+            ingredientL.innerHTML = `<span class="ingredientItem">${ingredientLi.ingredient}</span>` + ": " + (ingredientLi.quantity||ingredientLi.quantite) + ingredientLi.unit
             allIngredients.appendChild(ingredientL)
         });
 
@@ -42,11 +43,12 @@ function recipeFactory(data) {
         recipeFiche.appendChild(zoneImage);
         recipeFiche.appendChild(zoneLegende);
         zoneLegende.appendChild(enteteRecipe);
-        zoneLegende.appendChild(descriptionRecipe);
-        zoneLegende.appendChild(allIngredients);
+        zoneDescriptive.appendChild(allIngredients);
+        zoneDescriptive.appendChild(descriptionRecipe);
+        zoneLegende.appendChild(zoneDescriptive);
         enteteRecipe.appendChild(nameRecipe);
         enteteRecipe.appendChild(timeRecipe);
-
+        console.log(recipeFiche)
         return ( recipeFiche );
     }
     return { getRecipCard };
