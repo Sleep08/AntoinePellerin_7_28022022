@@ -109,6 +109,7 @@
 .sousMenuDropdownUstensils {
     background-color: #FF5A47;
 }
+
 /* Contenant des fiches recettes */
 
 #Recipes {
@@ -126,7 +127,9 @@
 
 .recipefiche {
     width: 30%;
+    height: auto;
     border: 1px solid #C9BDBD;
+    background-color: #e7e7e7;
     border-radius: 12px;
     margin-bottom: 50px;
 }
@@ -137,6 +140,15 @@
     border-radius: 12px 12px 0px 0px;
 }
 
+.zoneDescriptive {
+    display: flex;
+}
+
+.description {
+    width: 50%;
+    padding-right: 15px;
+}
+
 .enteteRecipe {
     display: flex;
     justify-content: space-between;
@@ -145,8 +157,23 @@
 }
 
 .timerecipe {
+    margin-top: 20px;
     font-weight: bold;
     font-size: 1.8em;
+}
+
+.timerecipe i {
+    margin-right: 10px;
+}
+
+.allIngredients {
+    margin-left: -20px;
+    list-style: none;
+    width: 50%;
+}
+
+.ingredientItem {
+    font-weight: bold;
 }
 
 /* sous-menu des dropdowns filters */
@@ -176,16 +203,48 @@
 }
 
 .sousMenuDropdownIngredients, .sousMenuDropdownAppareils, .sousMenuDropdownUstensils {
+    margin-left: 0px;
     z-index: 5;
     position: relative;
-    width: 500px;
-    height: 400px;
+    width: 100%;
+    height: auto;
     flex-wrap: wrap;
+    border-radius: 0px 0px 12px 12px;
 } 
 
-.itemDropdown {
+.itemDropdownIngredients, .itemDropdownAppareils {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.sousMenuList {
+    column-count: 3;
+    column-gap: 5px;
+    list-style: none;
+}
+
+/* Style de la barre de filtres */
+
+#containSpans {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5%;
+    margin-top: 30px;
+}
+
+.filterItem {
+    background-color: #007BFF;
+    padding: 10px;
+    border-radius: 12px;
+    width: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 15px;
+}
+
+.fa-circle-xmark {
+    margin-left: 10px;
 }
 
